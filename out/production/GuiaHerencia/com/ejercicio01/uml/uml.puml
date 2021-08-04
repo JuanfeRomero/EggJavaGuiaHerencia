@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Animal{
+    # String nombre;
+    # String alimento;
+    # Integer edad;
+    # String raza;
+    + void() alimentar;
+}
+
+class Perro{
+    + void() alimentar;
+}
+
+class Gato{
+    + void() alimentar;
+}
+
+class Caballo{
+    + void() alimentar;
+}
+
+
+Animal <|-- Perro
+Animal <|-- Gato
+Animal <|-- Caballo
+
+@enduml
