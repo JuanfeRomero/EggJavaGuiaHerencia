@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Electrodomestico{
+    # double precio;
+    # String color;
+    # char consumo;
+    # double peso;
+
+    - char comprobarConsumo(char letra)
+    - String comprobarColor(String color)
+    + void crearElectrodomestico()
+    + void precioFinal()
+}
+
+class Lavadora{
+    - int carga;
+
+    + void crearLavadora()
+    + void precioFinal()
+}
+
+class Televisor{
+    - int resolucion;
+    - boolean tdt;
+
+    + void crearTelevisor()
+    + void precioFinal()
+}
+
+Electrodomestico <|-- Lavadora
+Electrodomestico <|-- Televisor
+
+@enduml
