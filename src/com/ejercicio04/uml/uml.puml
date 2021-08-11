@@ -1,0 +1,55 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Alquiler {
+    ~ sc: Scanner
+    - nombre: String
+    - dniCliente: int
+    - fechaAlquiler: LocalDate
+    - fechaDevolucion: LocalDate
+    - posicionAmarre: char
+    - barco : Barco
+
+    + crearAlquiler(): void
+    - conseguirFechas(): void
+    + calcularAlquiler(): void
+}
+
+class Barco{
+    # matricula: String
+    # eslora: double
+    # anioFabricacion: int
+
+    + crearBarco(): void
+    + valorModulo() : double
+}
+
+class Velero {
+    - mastiles: int
+
+    + crearBarco(): void
+    + valorModulo() : double
+}
+
+class BarcoAMotor {
+    - potenciaCV: int
+
+    + crearBarco(): void
+    + valorModulo() : double
+}
+
+class Yates{
+    - camarotes: int
+
+    + crearBarco(): void
+    + valorModulo() : double
+}
+
+Barco <|-- Velero
+Barco <|-- BarcoAMotor
+BarcoAMotor <|-- Yates
+
+Alquiler o-"1.*" Barco
+
+
+@enduml
